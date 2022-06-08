@@ -1,0 +1,6 @@
+<h3>shipping price!</h3>
+<a href="history.go(-1)">Go back</a>
+<div *ngFor="let shipping of shippingCost | async">
+    <h3>{{ shipping.type }}</h3>
+    <p>{{ shipping.price | currency}}</p>
+</div>

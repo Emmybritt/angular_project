@@ -1,0 +1,14 @@
+<div>
+    <app-header></app-header>
+    <h1>Products list here!</h1>
+    <div *ngFor="let product of products">
+        <h1>
+            <a [title]="product.name + 'details'" [routerLink]="['/products', product.id]">{{ product.name }}</a>
+        </h1>
+        <p *ngIf="!product.description">There is no product description here</p>
+        <p>Description: {{ product.description }}</p>
+    <button type="button" (click)="share()" style="background-color: blue; color:white; padding:8px 12px 8px 12px;">Share</button>
+    <app-products-alerts (notify)="onNotify()" [product]="product"></app-products-alerts>
+    </div>
+</div>
+
